@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner sc;
-
+    static Calculator calculator;
     private static void addition() {
         System.out.print("Enter first number: ");
         double a = sc.nextDouble();
         System.out.print("Enter second number: ");
         double b = sc.nextDouble();
-        System.out.println("Result: ");
+        System.out.println("Result: " + calculator.addition(a, b));
     }
 
     private static void subtraction() {
@@ -17,7 +17,7 @@ public class Main {
         double a = sc.nextDouble();
         System.out.print("Enter second number: ");
         double b = sc.nextDouble();
-        System.out.println("Result: ");
+        System.out.println("Result: " + calculator.subtraction(a, b));
     }
 
     private static void multiplication() {
@@ -25,7 +25,7 @@ public class Main {
         double a = sc.nextDouble();
         System.out.print("Enter second number: ");
         double b = sc.nextDouble();
-        System.out.println("Result: ");
+        System.out.println("Result: " + calculator.multiplication(a, b));
     }
 
     private static void division() {
@@ -33,25 +33,25 @@ public class Main {
         double a = sc.nextDouble();
         System.out.print("Enter second number: ");
         double b = sc.nextDouble();
-        System.out.println("Result: ");
+        System.out.println("Result: " + calculator.division(a, b));
     }
 
     private static void squareRoot() {
         System.out.print("Enter number: ");
         double a = sc.nextDouble();
-        System.out.println("Result: ");
+        System.out.println("Result: " + calculator.squareRoot(a));
     }
 
     private static void factorial() {
         System.out.print("Enter number: ");
-        int a = sc.nextInt();
-        System.out.println("Result: ");
+        long a = sc.nextLong();
+        System.out.println("Result: " + calculator.factorial(a));
     }
 
     private static void naturalLog() {
         System.out.print("Enter number: ");
         double a = sc.nextDouble();
-        System.out.println("Result: ");
+        System.out.println("Result: " + calculator.naturalLog(a));
     }
 
     private static void exponentiation() {
@@ -59,12 +59,13 @@ public class Main {
         double a = sc.nextDouble();
         System.out.print("Enter second number: ");
         double b = sc.nextDouble();
-        System.out.println("Result: ");
+        System.out.println("Result: " + calculator.exponentiation(a, b));
     }
 
     public static void main(String[] args) {
         sc = new Scanner(System.in);
         boolean run = true;
+        calculator = new Calculator();
         while(run) {
             System.out.println("----------------------------------------------");
             System.out.println("Enter 1 for addition");
