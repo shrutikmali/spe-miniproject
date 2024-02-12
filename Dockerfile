@@ -1,4 +1,4 @@
-ubuntu:latest
+FROM ubuntu:latest
 
 RUN apt-get update \
     && apt get install openjdk-21-jre-headless
