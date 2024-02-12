@@ -18,8 +18,10 @@ pipeline {
         stage('Compile project') {
             steps {
                 script {
-                    mvn clean install
-                    mvn compile
+                    withMaven(maven: 'maven') {
+                        sh 'mvn clean install'
+                        sh 'mvn compile'
+                    }
                 }
             }
         }
