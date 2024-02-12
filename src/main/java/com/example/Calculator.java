@@ -2,22 +2,22 @@ package com.example;
 
 public class Calculator {
     
-    String addition(double a, double b) {
+    public String addition(double a, double b) {
         double ans = a + b;
         return Double.toString(ans);
     }
 
-    String subtraction(double a, double b) {
+    public String subtraction(double a, double b) {
         double ans = a - b;
         return Double.toString(ans);
     }
 
-    String multiplication(double a, double b) {
+    public String multiplication(double a, double b) {
         double ans = a * b;
         return Double.toString(ans);
     }
 
-    String division(double a, double b) {
+    public String division(double a, double b) {
         if(b == 0.0) {
             return "Cannot divide by 0";
         }
