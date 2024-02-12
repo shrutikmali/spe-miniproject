@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE_NAME = 'spe-mini-project'
+        GITHUB_REPO_URL = 'https://github.com/shrutikmali/spe-miniproject'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    git branch: 'main', url: "${GITHUB_REPO_URL}"
+                }
+            }
+        }
+
+        stage('Compile project') {
+            steps {
+                sh mvn compile
+            }
+        }
+
+//         stage('Build Docker Image') {
+//             steps {
+//                 script {
+//                     docker.build("${DOCKER_IMAGE_NAME}", '.')
+//                 }
+//             }
+//         }
+
+//         stage('Push Docker Images') {
+//             steps {
+//                 script{
+//                     docker.withRegistry('', 'DockerHubCred') {
+//                     sh 'docker tag calculator shrutik15/spe-mini-project:latest'
+//                     sh 'docker push shrutik15/spe-mini-project'
+//                     }
+//                  }
+//             }
+//         }
+
+//    stage('Run Ansible Playbook') {
+//             steps {
+//                 script {
+//                     ansiblePlaybook(
+//                         playbook: 'deploy.yml',
+//                         inventory: 'inventory'
+//                      )
+//                 }
+//             }
+//         }
+
+    }
+}
