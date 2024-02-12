@@ -19,7 +19,7 @@ public class Calculator {
 
     public String division(double a, double b) {
         if(b == 0.0) {
-            return "Cannot divide by 0";
+            return "";
         }
         else {
             double ans = a / b;
@@ -27,7 +27,7 @@ public class Calculator {
         }
     }
 
-    String squareRoot(double a) {
+    public String squareRoot(double a) {
         if(a < 0.0) {
             return "Cannot have square root of negative number";
         }
@@ -37,7 +37,7 @@ public class Calculator {
         }
     }
 
-    String factorial(long a) {
+    public String factorial(long a) {
         if(a < 0) {
             return "Cannot have factorial of negative number";
         }
@@ -50,7 +50,7 @@ public class Calculator {
         }
     }
 
-    String naturalLog(double a) {
+    public String naturalLog(double a) {
         if(a <= 0.0) {
             return "Cannot have natural log of 0 or negative";
         }
@@ -60,7 +60,7 @@ public class Calculator {
         }
     }
 
-    String exponentiation(double a, double b) {
+    public String exponentiation(double a, double b) {
         double ans = Math.pow(a, b);
         return Double.toString(ans);
     }
