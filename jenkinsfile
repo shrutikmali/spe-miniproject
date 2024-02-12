@@ -19,31 +19,33 @@ pipeline {
             steps {
                 script {
                     withMaven(maven: 'maven') {
-                        sh 'mvn clean install'
-                        sh 'mvn compile'
+                        sh "mvn package"
                     }
                 }
             }
         }
 
-//         stage('Build Docker Image') {
-//             steps {
-//                 script {
-//                     docker.build("${DOCKER_IMAGE_NAME}", '.')
-//                 }
-//             }
-//         }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("${DOCKER_IMAGE_NAME}", '.')
+                }
+            }
+        }
+        stage('Push Docker Images') {
+            steps {
+                script{
+                    docker.withRegistry('', 'DockerHubCred') {
+                    sh 'docker tag calculator shrutik15/spe-mini-project:latest'
+                    sh 'docker push shrutik15/spe-mini-project'
+                    }
+                }
+            }
+        }
+        
 
-//         stage('Push Docker Images') {
-//             steps {
-//                 script{
-//                     docker.withRegistry('', 'DockerHubCred') {
-//                     sh 'docker tag calculator shrutik15/spe-mini-project:latest'
-//                     sh 'docker push shrutik15/spe-mini-project'
-//                     }
-//                  }
-//             }
-//         }
+
+
 
 //    stage('Run Ansible Playbook') {
 //             steps {
