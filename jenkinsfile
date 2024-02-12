@@ -36,8 +36,8 @@ pipeline {
             steps {
                 script{
                     docker.withRegistry('', 'DockerHubCred') {
-                    sh 'docker tag calculator shrutik15/spe-mini-project:latest'
-                    sh 'docker push shrutik15/spe-mini-project'
+                    sh "docker tag ${DOCKER_IMAGE_NAME} shrutik15/spe-mini-project"
+                    sh "docker push shrutik15/${DOCKER_IMAGE_NAME}"
                     }
                 }
             }
