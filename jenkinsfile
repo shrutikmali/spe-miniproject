@@ -18,8 +18,8 @@ pipeline {
         stage('Compile project') {
             steps {
                 script {
-                    sh mvn clean install
-                    sh mvn compile
+                    mvn clean install
+                    mvn compile
                 }
             }
         }
