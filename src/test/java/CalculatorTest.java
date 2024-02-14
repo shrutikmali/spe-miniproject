@@ -6,7 +6,7 @@ public class CalculatorTest {
     @Test
     public void add() {
         Calculator calcuator = new Calculator();
-        assertEquals("3.0", calcuator.addition(1.0, 1.0));
+        assertEquals("2.0", calcuator.addition(1.0, 1.0));
     }
 
     @Test
