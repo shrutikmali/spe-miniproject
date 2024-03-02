@@ -2,7 +2,7 @@ package com.example;
 import java.util.Scanner;
 
 public class Main {
-    // Comment 2 for testing webhook
+    // Comment 1 for testing webhook
     static Scanner sc;
     static Calculator calculator;
     private static void addition() {
